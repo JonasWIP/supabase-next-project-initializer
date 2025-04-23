@@ -3,6 +3,10 @@
 ## Description
 
 A CLI tool to create a Supabase + Next.js project with best practices.
+Can use template Github repositories and ensures depnedencies are installed.
+Created with this default project of mine if given none as a parameter:
+https://github.com/JonasWIP/supanexttemplate
+
 
 ## Installation
 
