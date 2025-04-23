@@ -45,4 +45,4 @@ next-env.d.ts
 # Cache
 .cache/
 .eslintcache
-create-supabase-next-1.0.0.tgz
+*.tgz
