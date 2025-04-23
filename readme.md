@@ -20,6 +20,12 @@ npm install -g create-supabase-next
 create-supabase-next my-project
 ```
 
+Or simply using npx:
+
+```bash
+npx create-supabase-next my-project
+```
+
 ## API Documentation
 
 This CLI tool does not have an API. It is used to generate a Supabase + Next.js project.

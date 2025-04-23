@@ -16,15 +16,15 @@
     "cli",
     "create-next-app"
   ],
-  "author": "Your Name",
+  "author": "Jonas Reitz",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/supanexttemplate",
+  "homepage": "https://jonasreitz.de",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/supanexttemplate"
+    "url": "https://github.com/JonasWIP/supabase-next-project-initializer"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/supanexttemplate/issues"
+    "url": "https://github.com/JonasWIP/supabase-next-project-initializer/issues"
   },
   "dependencies": {
     "chalk": "^4.1.2",
