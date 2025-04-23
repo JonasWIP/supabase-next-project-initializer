@@ -110,7 +110,7 @@ async function main() {
         ${chalk.cyan('npm start')}
           Runs the built app in production mode.
       
-        ${chalk.cyan('supabase start')}
+        ${chalk.cyan('npx supabase start')}
           Starts the local Supabase development environment.
       
       We suggest that you begin by typing:
@@ -120,6 +120,9 @@ async function main() {
       
       Happy coding!
     `);
+
+    // Exit the process with success code
+    process.exit(0);
 
   } catch (error) {
     errorHandler.handleError(error);
