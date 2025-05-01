@@ -95,6 +95,37 @@ async function main() {
       templateRepo: options.templateRepo
     });
 
+    // Run setup script in the newly created project
+    try {
+      const spinner = ora('Running setup script in the new project...').start();
+      await new Promise((resolve, reject) => {
+        const child = require('child_process').spawn('npm', ['run', 'setup'], {
+          cwd: projectPath,
+          stdio: 'inherit',
+          shell: true
+        });
+        
+        child.on('close', (code) => {
+          if (code === 0) {
+            spinner.succeed('Setup completed successfully');
+            resolve();
+          } else {
+            spinner.fail(`Setup script failed with code ${code}`);
+            reject(new Error(`Setup script failed with code ${code}`));
+          }
+        });
+        
+        child.on('error', (err) => {
+          spinner.fail(`Setup script failed: ${err.message}`);
+          reject(err);
+        });
+      });
+    } catch (error) {
+      errorHandler.handleError(error);
+      // Continue despite errors as the project might still be usable
+      logger.warn('Setup script failed, but the project was created. You may need to run setup manually.');
+    }
+
     // Success message
     logger.success(`
       ${chalk.green('Success!')} Created ${chalk.cyan(projectName)} at ${chalk.cyan(projectPath)}
